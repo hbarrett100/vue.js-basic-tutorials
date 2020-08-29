@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+    <style type="text/css">
+        body {
+            padding-top: 40px
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="root" class="container">
+
+        <!-- @close is a custom event -->
+        <modal v-if="showModal" @close="showModal=false">
+            Insert some cool text here.
+        </modal>
+
+        <button @click="showModal=true">Show Modal</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
