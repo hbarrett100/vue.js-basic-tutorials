@@ -14,17 +14,10 @@
 
     <div id="root" class="container">
 
-        <tabs>
-            <tab name="About Us" :selected="true">
-                <h1>Here is the content for the about us tab.</h1>
-            </tab>
-            <tab name="About Our Culture">
-                <h1>Here is the content for the culture tab.</h1>
-            </tab>
-            <tab name="About Our Vision">
-                <h1>Here is the content for the culture tab.</h1>
-            </tab>
-        </tabs>
+        <!-- child component communicating with parent -->
+        <coupon @applied="onCouponApplied"></coupon>
+
+        <h1 v-if="couponApplied">You used a coupon!</h1> 
 
     </div>
 

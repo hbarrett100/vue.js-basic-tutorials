@@ -11,9 +11,19 @@ Vue.component('task-list', {
                 { description: 'Make conor tea', complete: false },
             ]
         }
-    }
-});
+    },
 
+    computed: {
+        incompleteTasks() {
+            return this.tasks.filter(task => !task.completed);
+        },
+    
+        completeTasks() {
+            return this.tasks.filter(task => task.completed);
+        }
+    }
+  
+});
 
 Vue.component('task', {
     template: '<li><slot></slot></li>',
@@ -25,89 +35,6 @@ Vue.component('task', {
         }
     }
 });
-
-
-Vue.component('message', {
-
-    props: ['title', 'body'],
-
-    data() {
-        return {
-            isVisible: true
-        };
-    },
-
-    template: `
-    <article class="message" v-show="isVisible">
-
-        <div class="message-header">
-            {{ title }}
-
-            <button type="button" @click="hideModal">x</button>
-        </div>
-
-        <div class="message-body">
-            {{ body }}
-        </div>
-
-    </article>`,
-
-    methods: {
-        hideModal() {
-
-            this.isVisible = false;
-        }
-    }
-});
-
-
-Vue.component('modal', {
-    template: `
-
-    <div class="modal is-active">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <div class="box">
-                <slot></slot>
-            </div>
-        </div>
-        <button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>
-    </div>
-    `
-})
-
-Vue.component('tabs', {
-    template: `
-    <div>
-        <div class="tabs">
-            <ul>
-                <li class="is-active"><a>Pictures</a></li>
-                <li><a>Music</a></li>
-                <li><a>Videos</a></li>
-                <li><a>Documents</a></li>
-            </ul>
-        </div>
-
-        <div class="tabs-details">
-            <slot></slot>
-        </div>
-    </div>
-
-
-    `,
-
-    mounted() {
-        console.log(this.$children);
-    }
-
-});
-
-Vue.component('tab', {
-    template: `
-        <div><slot></slot></div>    
-    `
-})
-
 
 new Vue({
 
