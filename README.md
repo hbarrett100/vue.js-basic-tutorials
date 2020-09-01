@@ -1,3 +1,3 @@
 # vue.js-basic-tutorials
 
-Basic vue.js tutorials found at https://www.youtube.com/watch?v=Y05uRiksXXI&list=PL3VM-unCzF8iRyPotjFsgy7EfuCITvr_3&index=1
+Basic vue.js tutorials found at https://www.youtube.com/watch?v=Y05uRiksXXI&list=PL3VM-unCzF8iRyPotjFsgy7EfuCITvr_3&index=1 and some of my own practise scripts inspired by the tutorials.
